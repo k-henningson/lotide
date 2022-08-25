@@ -8,18 +8,18 @@ const assertEqual = function(actual, expected) {
 
 //Takes in sentence as a string & returns count of letters in sentence
 const countLetters = function(sentence) {
-//Set empty object for result
+  //Set empty object for result
   let result = {};
   for (const letter of sentence) {
-  //console.log('Letter', letter);
-  //Add to result if letter not present & not space
+    //console.log('Letter', letter);
+    //Add to result if letter not present & not space
     if (letter === ' ') {
-      continue
+      continue;
     }
     if (!result[letter]) {
-      result[letter] = 0
+      result[letter] = 0;
     }
-    result[letter] ++;
+    result[letter]++;
   }
   return result;
 };

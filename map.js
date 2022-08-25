@@ -11,7 +11,7 @@ const eqArrays = function(arr1, arr2) {
   }
   return true;
 };
-  
+
 const assertArraysEqual = function(actual, expected) {
   const result = eqArrays(actual, expected);
   if (result) {
@@ -38,7 +38,7 @@ console.log(results2);
 console.log(results3);
 
 assertArraysEqual(results1, ['g', 'c', 't', 'm', 't']); // => PASS
-assertArraysEqual(results2, ['d', 'l', 'o', 'r', 'm' ]); // => PASS
+assertArraysEqual(results2, ['d', 'l', 'o', 'r', 'm']); // => PASS
 assertArraysEqual(results3, ['r', 'o', 'o', 'a', 'o']); // => PASS
 assertArraysEqual(results1, ['t', 'm', 't', 'c', 'g']); // => FAIL
 

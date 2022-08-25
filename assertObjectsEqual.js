@@ -1,19 +1,19 @@
-  const eqArrays = function(arr1, arr2) {
-    //Do arrays have same length
-    if (arr1.length !== arr2.length) {
+const eqArrays = function(arr1, arr2) {
+  //Do arrays have same length
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  //Loop over arrays 
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
       return false;
     }
-    //Loop over arrays 
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-    return true;
-    };
-  
-  // Returns true if both objects have identical keys with identical values.
-  const eqObjects = function(object1, object2) {
+  }
+  return true;
+};
+
+// Returns true if both objects have identical keys with identical values.
+const eqObjects = function(object1, object2) {
   //Do the objects have the same number of keys?
   const obj1keys = Object.keys(object1);
   const obj2keys = Object.keys(object2);
@@ -28,44 +28,44 @@
     //Use Array.isArray against both values to see if array comparisons need to be made 
     //If both values arrays - pass to eqArrays
     if (Array.isArray(val1) && Array.isArray(val2)) {
-     return eqArrays(val1, val2);
+      return eqArrays(val1, val2);
     }
     //Otherwise else assume primitives and continue to compare the two values 
     //Compare both objects' values
-     if (val1 !== val2) {
+    if (val1 !== val2) {
       return false;
     }
   }
   //Objects are the same return true
   return true;
-  };
+};
 
-  const assertObjectsEqual = function(actual, expected) {
-    const inspect = require('util').inspect; // Importing inspect function from 'util' to print entire object not just say 'object'
-    const result = eqObjects(actual, expected);
-    if (result) {
-      console.log(`✅✅✅Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
-    } else {
-      console.log(`🛑🛑🛑Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
-    }
-  };
+const assertObjectsEqual = function(actual, expected) {
+  const inspect = require('util').inspect; // Importing inspect function from 'util' to print entire object not just say 'object'
+  const result = eqObjects(actual, expected);
+  if (result) {
+    console.log(`✅✅✅Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
+  } else {
+    console.log(`🛑🛑🛑Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
+  }
+};
 
-  const ab = { a: "1", b: "2" };
-  const ba = { b: "2", a: "1" };
-  const abc = { a: "1", b: "2", c: "3" };
-  const cd = { c: "1", d: ["2", 3] };
-  const dc = { d: ["2", 3], c: "1" };
-  const cd2 = { c: "1", d: ["2", 3, 4] };
-  
-  //eqObjects(ab, ba); // => true
-  //eqObjects(ab, abc); // => false
-  //eqObjects(cd, dc); // => true
-  //eqObjects(cd, cd2); // => false
+const ab = { a: "1", b: "2" };
+const ba = { b: "2", a: "1" };
+const abc = { a: "1", b: "2", c: "3" };
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+const cd2 = { c: "1", d: ["2", 3, 4] };
 
-  //assertEqual(eqObjects(ab, ba), true);
-  //assertEqual(eqObjects(ab, abc), false);
-  // assertEqual(eqObjects(cd, dc), true);
-  // assertEqual(eqObjects(cd, cd2), false);
+//eqObjects(ab, ba); // => true
+//eqObjects(ab, abc); // => false
+//eqObjects(cd, dc); // => true
+//eqObjects(cd, cd2); // => false
+
+//assertEqual(eqObjects(ab, ba), true);
+//assertEqual(eqObjects(ab, abc), false);
+// assertEqual(eqObjects(cd, dc), true);
+// assertEqual(eqObjects(cd, cd2), false);
 
 assertObjectsEqual(ab, ba); // => true
 assertObjectsEqual(ab, abc); // => false
