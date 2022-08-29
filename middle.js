@@ -1,27 +1,3 @@
-const eqArrays = function(arr1, arr2) {
-  //Do arrays have same length
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  //Loop over arrays 
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-
-const assertArraysEqual = function(actual, expected) {
-  const result = eqArrays(actual, expected);
-  if (result) {
-    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 //Middle will return an array with only the middle element(s)
 const middle = function(arr) {
   let midArr = [];
@@ -44,16 +20,13 @@ const middle = function(arr) {
   }
 };
 
-middle([1]); // => []
-middle([1, 2]); // => []
+module.exports = middle;
 
-middle([1, 2, 3]); // => [2]
-middle([1, 2, 3, 4, 5]); // => [3]
+// middle([1]); // => []
+// middle([1, 2]); // => []
 
-middle([1, 2, 3, 4]); // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]); // => [3, 4]
+// middle([1, 2, 3]); // => [2]
+// middle([1, 2, 3, 4, 5]); // => [3]
 
-assertArraysEqual(middle([1]), []); // => PASS 
-assertArraysEqual(middle([1, 2, 3]), [2]); // => PASS 
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]); // => PASS
-assertArraysEqual(middle([1, 2, 3, 4]), [2]); // => FAIL
+// middle([1, 2, 3, 4]); // => [2, 3]
+// middle([1, 2, 3, 4, 5, 6]); // => [3, 4]
