@@ -5,15 +5,20 @@ const assert = require('chai').assert;
 const tail = require('../tail');
 
 describe("#tail", () => {
-  it("returns 2 for result.length", () => {
+  it("returns 2 for tail.length", () => {
     const actual = tail(['Hello', 'Lighthouse', 'Labs']);
     assert.strictEqual(actual.length, 2);
   });
 
-  it("returns 'Lighthouse' and 'Labs' for result[0] result[1]", () => {
+  it("returns 'Lighthouse' tail[0]", () => {
     const actual = tail(['Hello', 'Lighthouse', 'Labs']);
     const expected = ['Lighthouse', 'Labs'];
     assert.strictEqual(actual[0], expected[0]);
+  });
+
+  it("returns 'Labs' for tail[1]", () => {
+    const actual = tail(['Hello', 'Lighthouse', 'Labs']);
+    const expected = ['Lighthouse', 'Labs'];
     assert.strictEqual(actual[1], expected[1]);
   });
 
