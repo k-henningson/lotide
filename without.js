@@ -51,6 +51,15 @@ const eqArrays = function(arr1, arr2) {
     return newArr;
   }
 
+  // const without2 = function(source, itemsToRemove) {
+  //   const newArr = source.filter(item => {
+  //     if (!itemsToRemove.includes(item)) {
+  //       return true
+  //     } 
+  //   })
+  //   return newArr;
+  // }
+
   console.log(without([1, 2, 3], [1])); // => [2, 3]
   console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
   console.log(without(['hello', 'hi', 'hey'], ['hi'])); // => ['hello', 'hey']
