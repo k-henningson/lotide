@@ -1,11 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 //Takes in sentence as a string & returns count of letters in sentence
 const countLetters = function(sentence) {
   //Set empty object for result
@@ -24,11 +16,13 @@ const countLetters = function(sentence) {
   return result;
 };
 
+module.exports = countLetters;
 
-const result = countLetters('lighthouse in the house');
-console.log(result);
 
-assertEqual(result.l, 1);
-assertEqual(result[' '], undefined);
-assertEqual(result.h, 4);
-assertEqual(result.a, undefined);
+// const result = countLetters('lighthouse in the house');
+// console.log(result);
+
+// assertEqual(result.l, 1);
+// assertEqual(result[' '], undefined);
+// assertEqual(result.h, 4);
+// assertEqual(result.a, undefined);

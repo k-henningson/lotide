@@ -1,30 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-const eqArrays = function(arr1, arr2) {
-  //Do arrays have same length
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  //Loop over arrays 
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-  };
-  
-  const assertArraysEqual = function(arr1, arr2) {
-    const result = eqArrays(arr1, arr2);
-    assertEqual(result, true);
-  };
-
   const without = function(source, itemsToRemove) {
     //Establish new array
     let newArr = [];
@@ -51,6 +24,8 @@ const eqArrays = function(arr1, arr2) {
     return newArr;
   }
 
+  module.exports = without;
+
   // const without2 = function(source, itemsToRemove) {
   //   const newArr = source.filter(item => {
   //     if (!itemsToRemove.includes(item)) {
@@ -60,9 +35,9 @@ const eqArrays = function(arr1, arr2) {
   //   return newArr;
   // }
 
-  console.log(without([1, 2, 3], [1])); // => [2, 3]
-  console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
-  console.log(without(['hello', 'hi', 'hey'], ['hi'])); // => ['hello', 'hey']
+  // console.log(without([1, 2, 3], [1])); // => [2, 3]
+  // console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
+  // console.log(without(['hello', 'hi', 'hey'], ['hi'])); // => ['hello', 'hey']
 
 //    const words = ["hello", "world", "lighthouse"];
 // without(words, ["lighthouse"]); // no need to capture return value for this test case

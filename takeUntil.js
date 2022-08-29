@@ -1,26 +1,3 @@
-const eqArrays = function(arr1, arr2) {
-  //Do arrays have same length
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  //Loop over arrays 
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  const result = eqArrays(actual, expected);
-  if (result) {
-    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 const takeUntil = function(array, callback) {
   const result = [];
   for (let item of array) {
@@ -33,20 +10,22 @@ const takeUntil = function(array, callback) {
   return result;
 };
 
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);
-console.log(results1);
+module.exports = takeUntil;
 
-console.log('---');
+// const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+// const results1 = takeUntil(data1, x => x < 0);
+// console.log(results1);
 
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, x => x === ',');
-console.log(results2);
+// console.log('---');
 
-assertArraysEqual(results1, [1, 2, 5, 7, 2]); // => PASS
-assertArraysEqual(results1, [1, 2, 5, 7, -1]); // => FAIL
-assertArraysEqual(results2, ['I\'ve', 'been', 'to', 'Hollywood']); // => PASS
-assertArraysEqual(results2, ['I\'ve', 'been', 'to', 'Redwood']); // => FAIL
+// const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
+// const results2 = takeUntil(data2, x => x === ',');
+// console.log(results2);
+
+// assertArraysEqual(results1, [1, 2, 5, 7, 2]); // => PASS
+// assertArraysEqual(results1, [1, 2, 5, 7, -1]); // => FAIL
+// assertArraysEqual(results2, ['I\'ve', 'been', 'to', 'Hollywood']); // => PASS
+// assertArraysEqual(results2, ['I\'ve', 'been', 'to', 'Redwood']); // => FAIL
 
 //EXPECTED OUTPUT
 // [ 1, 2, 5, 7, 2 ]

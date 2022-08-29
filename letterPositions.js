@@ -1,27 +1,3 @@
-const eqArrays = function(arr1, arr2) {
-  //Do arrays have same length
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  //Do arrays not match at each index
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  //Arrays are the same
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  const result = eqArrays(actual, expected);
-  if (result) {
-    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 //Return all indices in string where each character is found
 const letterPositions = function(sentence) {
   const result = {};
@@ -40,12 +16,14 @@ const letterPositions = function(sentence) {
   return result;
 };
 
+module.exports = letterPositions;
 
 
-letterPositions('lighthouse in the house');
-assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions("kyra").k, [0]);
-assertArraysEqual(letterPositions("this will not work").w, [0]);
+
+// letterPositions('lighthouse in the house');
+// assertArraysEqual(letterPositions("hello").e, [1]);
+// assertArraysEqual(letterPositions("kyra").k, [0]);
+// assertArraysEqual(letterPositions("this will not work").w, [0]);
 
 
 //EXPECTED RESULT
