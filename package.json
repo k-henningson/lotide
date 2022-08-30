@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@k-henningson/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lighthouse Labs Lotide version of Lodash",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/k-henningson/lotide.git"
   },
-  "author": "",
+  "author": "Kyra Henningson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/k-henningson/lotide/issues"
